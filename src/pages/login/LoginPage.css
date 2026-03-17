@@ -1,0 +1,307 @@
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  background: #f7f8fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fc;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 위쪽 일러스트 영역 */
+.login-illustration {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  height: 36vh;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to bottom,
+    #dff4ff 0%,
+    #eaf8ff 30%,
+    #eefbe9 31%,
+    #eefbe9 100%
+  );
+}
+
+/* 언덕 */
+.login-hill {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+  bottom: 120px;
+  height: 220px;
+  background: #c8ecbe;
+  z-index: 1;
+}
+
+.hill-front {
+  bottom: 0;
+  height: 240px;
+  background: #94d99c;
+  z-index: 2;
+}
+
+/* 중앙 문구 카드 */
+.illustration-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  z-index: 5;
+  text-align: center;
+  width: min(82vw, 380px);
+  padding: 22px 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(110, 110, 160, 0.12);
+}
+
+.illustration-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff1b8;
+  color: #7a5b00;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.illustration-text h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.9rem, 2.6vw, 3rem);
+  color: #2f2a4a;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.illustration-text p {
+  margin: 0;
+  color: #5e5a76;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* 꽃 */
+.login-flower {
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+}
+
+.login-flower::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 6px;
+  height: 82px;
+  transform: translateX(-50%);
+  background: #4f9b5c;
+  border-radius: 999px;
+}
+
+.login-flower::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 66px;
+  width: 48px;
+  height: 48px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #ffe27a;
+  box-shadow:
+    0 -16px 0 0 #ffd6e7,
+    0 16px 0 0 #ffd6e7,
+    16px 0 0 0 #ffd6e7,
+    -16px 0 0 0 #ffd6e7,
+    11px 11px 0 0 #ffd6e7,
+    -11px 11px 0 0 #ffd6e7,
+    11px -11px 0 0 #ffd6e7,
+    -11px -11px 0 0 #ffd6e7;
+}
+
+.flower-a {
+  left: 60px;
+}
+
+.flower-b {
+  left: 150px;
+  transform: scale(0.82);
+}
+
+.flower-c {
+  right: 70px;
+}
+
+/* 아래 로그인 영역 */
+.login-panel {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 20px 36px;
+  background: #f7f8fc;
+}
+
+.login-card {
+  width: min(92vw, 480px);
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 30px 24px 24px;
+  box-shadow: 0 16px 40px rgba(96, 110, 140, 0.12);
+  border: 1px solid #eef1f6;
+}
+
+.login-card p {
+  margin: 12px 0 28px;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: #a3aec3;
+  line-height: 1.6;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  padding: 0 16px;
+  outline: none;
+  font-size: 1rem;
+  color: #44506a;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input::placeholder {
+  color: #a8b3c7;
+}
+
+.input-group input:focus {
+  border-color: #8fb6ff;
+  box-shadow: 0 0 0 4px rgba(143, 182, 255, 0.14);
+}
+
+.login-button {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 14px;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #4d95ff, #2d7df4);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(45, 125, 244, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(45, 125, 244, 0.28);
+}
+
+.signup-button {
+  width: 100%;
+  height: 54px;
+  border: 1px solid #dce7ff;
+  border-radius: 14px;
+  margin-top: 12px;
+  background: #f8fbff;
+  color: #4d7bd6;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.signup-button:hover {
+  background: #eef5ff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .login-illustration {
+    height: 38vh;
+    min-height: 280px;
+  }
+
+  .hill-back {
+    bottom: 95px;
+    height: 170px;
+  }
+
+  .hill-front {
+    height: 190px;
+  }
+
+  .illustration-text {
+    width: min(90vw, 420px);
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .flower-a {
+    left: 32px;
+  }
+
+  .flower-b {
+    left: 92px;
+  }
+
+  .flower-c {
+    right: 32px;
+  }
+
+  .login-panel {
+    padding: 24px 16px 32px;
+  }
+
+  .login-card {
+    width: min(94vw, 430px);
+    padding: 30px 20px 22px;
+    border-radius: 20px;
+  }
+
+  .input-group input,
+  .login-button,
+  .signup-button {
+    height: 52px;
+  }
+}
